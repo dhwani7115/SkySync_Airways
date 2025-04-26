@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SkySync Airline</h1>
+    </header>
+
+    <section id="flights">
+        <h2>Available Flights</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Destination</th>
+                    <th>Departure Time</th>
+                    <th>Seats Available</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="flight-list">
+                <!-- Flight data will go here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="reservation-form">
+        <h2>Book a Flight</h2>
+        <form id="booking-form" method="post" action="reserve.php">
+            <label for="flight-number">Choose a flight:</label>
+            <select id="flight-number" name="flight_id" required>
+                <!-- Flight options will go here -->
+            </select>
+
+            <label for="name">Passenger Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone" required>
+
+            <input type="submit" value="Book Flight">
+        </form>
+    </section>
+
+    <section id="confirmation" style="display: none;">
+        <h2>Booking Confirmation</h2>
+        <p id="confirmation-message"></p>
+        <button onclick="window.location.reload();">Back to Home</button>
+    </section>
+
+</body>
+</html>
